@@ -1,3 +1,5 @@
+import java.util.Vector;
+
 class MathMatrix extends MathObject {
 
 	/**
@@ -28,6 +30,23 @@ class MathMatrix extends MathObject {
 
 
 	}
+	
+	public MathMatrix(Vector<Vector<MathObject>> m) {
+		super();
+		rows = (int) m.size();
+		columns = (int) (m.get(0)).size();
+		
+		content = new double [rows][columns];
+		
+	    for (int r = 0; r < rows; r++) {
+	    	for(int s = 0; s <columns; s++){
+	    		MathScalar i = (MathScalar) (m.get(r)).get(s);
+	    		content[r][s] = (double) i.value;
+	    	}
+	    }
+	}
+	
+
 	/** Multiplies this, a MathObject can be a scalar or a MathMatrix, by a 
 	 * MathMatrix. The multiplication algorithm is the naive one which runs in
 	 * O(n^3). 

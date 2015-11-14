@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.util.Vector;
 
 public abstract class MathObject implements Serializable {
 
@@ -20,6 +21,7 @@ public abstract class MathObject implements Serializable {
 	
 	public abstract MathObject add(MathScalar m1);
 	public abstract MathObject add(MathMatrix m1)throws MathException;	
+
 	
 }
 
